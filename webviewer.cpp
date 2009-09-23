@@ -206,9 +206,9 @@ class URLDialog : public QDialog
 public:
     URLDialog( QWidget * parent = 0, Qt::WindowFlags flags = 0) : QDialog(parent, flags)
     {
-        QPalette pal = palette();
-        pal.setBrush(QPalette::Window, QBrush(QColor(0,0,0,200)));
-        setPalette(pal);
+//         QPalette pal = palette();
+//         pal.setBrush(QPalette::Window, QBrush(QColor(0,0,0,200)));
+//         setPalette(pal);
 
         setWindowTitle("Enter URL");
         setWindowState(Qt::WindowMaximized);
@@ -840,8 +840,8 @@ WebViewer::WebViewer(QWidget *parent, Qt::WFlags f)
 #endif
     }
 
-	// zoom in
-	view->setTextSizeMultiplier(4.0);
+	// zoom in two times
+	view->setTextSizeMultiplier(2.0);
 
     setCentralWidget(box);
 
@@ -1128,11 +1128,11 @@ void WebViewer::setDocument( const QString &doc )
 void WebViewer::goTo()
 {
     URLDialog dlg(this);
-    if (!view->url().isEmpty())
-    {
-        dlg.setText(view->url().toString());
-        dlg.selectAll();
-    }
+//     if (!view->url().isEmpty())
+//     {
+//         dlg.setText(view->url().toString());
+//         dlg.selectAll();
+//     }
     if (dlg.exec() == QDialog::Accepted) {
         QUrl url(dlg.text());
         view->load(url);
