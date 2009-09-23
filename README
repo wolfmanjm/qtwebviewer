@@ -1,0 +1,5 @@
+This is based on the qt extended web viewer sample.
+
+Added a zoom option.
+Fix the transparency on the enter URL so you can actually see it.
+Fix anything else that makes it hard to use.
